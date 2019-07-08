@@ -2,7 +2,7 @@
 
 #include "TankAIController.h" // Must first one to incude
 #include "Engine/World.h"
-
+#include "Tank.h"
 void ATankAIController::BeginPlay()
 {
 	Super::BeginPlay();
@@ -45,7 +45,7 @@ void ATankAIController::Tick(float DeltaTime)
 
 	if (GetPlayerTank()) {
 		// TODO Move towards the player
-
+		
 		// Aim towards the player
 		GetControlledTank()->AimAt(GetPlayerTank()->GetActorLocation());
 
