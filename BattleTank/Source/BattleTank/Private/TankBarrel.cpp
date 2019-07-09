@@ -4,12 +4,19 @@
 #include "Engine/World.h"
 
 void UTankBarrel::Elevate(float RelativeSpeed) {
-	
+	auto OurTankName = GetOwner()->GetName();
 	// UE_LOG(LogTemp, Warning, TEXT(" Barrel-Elevate called at speed %f"), RelativeSpeed)
 
 
 	// Clamp relative speed between -1 to 1
 	RelativeSpeed = FMath::Clamp<float>(RelativeSpeed, -1, +1);
+
+	if (RelativeSpeed < 0) {
+		UE_LOG(LogTemp, Warning, TEXT("%s down"), *OurTankName)
+	}
+	else {
+		UE_LOG(LogTemp, Warning, TEXT("%s up"), *OurTankName)
+	}
 
 	// Move the barrel the right amout this frame
 	// Given a max elevation speed, and the frame time
