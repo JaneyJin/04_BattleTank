@@ -9,12 +9,12 @@ void UTankTurret::Rotate(float RelativeSpeed) {
 	// Clamp relative speed between -1 to 1
 	RelativeSpeed = FMath::Clamp<float>(RelativeSpeed, -1, +1);
 
-	if (RelativeSpeed < 0) {
+	/*if (RelativeSpeed < 0) {
 		UE_LOG(LogTemp, Warning, TEXT("%s left"), *OurTankName)
 	}
 	else {
 		UE_LOG(LogTemp, Warning, TEXT("%s right"), *OurTankName)
-	}
+	}*/
 
 	
 	auto RotationChange = MaxDegreesPerSecond * RelativeSpeed * GetWorld()->DeltaTimeSeconds;
