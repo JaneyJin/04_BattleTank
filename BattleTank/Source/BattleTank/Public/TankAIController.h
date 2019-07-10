@@ -20,9 +20,11 @@ private:
 	// BeginPlay() should stay public if you plan to inherit from this class
 	virtual void BeginPlay() override;
 
-	ATank* GetControlledTank() const;
 
-	ATank* GetPlayerTank() const;
 	
 	virtual void Tick(float DeltaTime) override;
+
+	//ATank* GetControlledTank() const;
+
+// ATank* GetPlayerTank() const;
 };
